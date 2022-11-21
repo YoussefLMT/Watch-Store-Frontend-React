@@ -10,7 +10,6 @@ function Navbar() {
     <>
       <nav>
         <a href="/"><img src={logo} /></a>
-
         <div>
           <ul className={clicked ? 'navbar active' : 'navbar'}>
             <li><a href="/">Home</a></li>
@@ -19,7 +18,6 @@ function Navbar() {
             <li><a href="/#">Contact</a></li>
           </ul>
         </div>
-
         <div className='mobile' onClick={() => setCicked(clicked => !clicked)}>
           <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
