@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import logo from '../logo.svg'
+import './navbar.css'
 
 function Navbar() {
+
+  const [clicked, setCicked] = useState(false)
+
   return (
     <>
       <nav>
