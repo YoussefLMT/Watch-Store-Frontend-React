@@ -1,0 +1,9 @@
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    top: 0;
+    /* this is required for "sticky" to work */
+    position: sticky;
+    background: lightblue;
+    padding: 1rem;
+}
