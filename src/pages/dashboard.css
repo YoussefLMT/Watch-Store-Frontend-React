@@ -1,0 +1,11 @@
+.p {
+    display: flex;
+}
+
+main {
+    height: 3000px;
+    /* cause scroll */
+    background: green;
+    flex-grow: 1;
+    padding: 1rem;
+}
