@@ -5,7 +5,9 @@ function Sidebar() {
 
     const[clicked, setClicked] = useState(false)
 
-   
+    const toggle = () => {
+        setClicked(clicked => !clicked)
+    }
     
     return (
         <div className="sidebar" style={{ width: '20%'}}>
