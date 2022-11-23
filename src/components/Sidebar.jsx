@@ -10,7 +10,7 @@ function Sidebar() {
     }
     
     return (
-        <div className="sidebar" style={{ width: '20%'}}>
+        <div className="sidebar" style={{ width: clicked ? '5%' : '20%'}}>
             Sidebar 
             <br />
 
