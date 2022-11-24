@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import './dashboard.css'
 
 function Dashboard() {
+
+    const [clicked, setCicked] = useState(false)
+
     return (
         <div className='p'>
             <Sidebar />
