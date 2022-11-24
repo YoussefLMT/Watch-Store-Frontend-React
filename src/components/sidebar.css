@@ -11,6 +11,8 @@
 
 @media only screen and (max-width: 600px) {
     .sidebar {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: -300px;
     }
 }
