@@ -12,8 +12,8 @@ function Dashboard() {
             <main>
                 Dashboard
 
-                <div className='mobile'>
-                    <i className="fas fa-bars"></i>
+                <div className='mobile' onClick={() => setCicked(clicked => !clicked)}>
+                    <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
                 </div>
             </main>
         </div>
