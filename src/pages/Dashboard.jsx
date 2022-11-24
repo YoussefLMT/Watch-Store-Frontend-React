@@ -8,6 +8,10 @@ function Dashboard() {
             <Sidebar />
             <main>
                 Dashboard
+
+                <div className='mobile'>
+                    <i className="fas fa-bars"></i>
+                </div>
             </main>
         </div>
     )
