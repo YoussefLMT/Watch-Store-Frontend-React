@@ -4,5 +4,15 @@
 }
 
 .content {
-    margin: 200px 0;
+    margin: 150px 0;
+}
+
+.shop-btn {
+    margin-top: 8px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
 }
