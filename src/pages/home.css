@@ -7,7 +7,12 @@
     margin: 150px 0 0 100px;
 }
 
-.shop-btn {
+.content p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.content .shop-btn {
     margin-top: 8px;
     padding: 10px 20px;
     background: black;
@@ -24,4 +29,24 @@
 
 .image img {
     width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        margin: 50px 0 0 10px;
+    } 
+
+    .content h1 {
+        font-size: 18px;
+    }
+
+    .content p {
+        font-size: 17px;
+    }
+
+    .content .shop-btn {
+        margin: 8px 100px;
+        padding: 8px 15px;
+    }
+
 }

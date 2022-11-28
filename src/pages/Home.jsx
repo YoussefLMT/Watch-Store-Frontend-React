@@ -11,7 +11,7 @@ function Home() {
             <div className="home">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4 content">
+                        <div className="col-md-5 content">
                             <h1>Choose your watch now!</h1>
                             <p className="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Delectus assumenda temporibus dolor impedit autem esse in culpa
