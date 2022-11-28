@@ -33,20 +33,33 @@
 
 @media only screen and (max-width: 768px) {
     .content {
-        margin: 50px 0 0 10px;
+        margin: 50px 0;
+        padding: 20px;
+        text-align: center;
     } 
 
     .content h1 {
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 600;
     }
 
     .content p {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .content .shop-btn {
         margin: 8px 100px;
         padding: 8px 15px;
+        font-weight: 500;
     }
 
+    .image img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+   .image img {
+        display: none;
+    }
 }

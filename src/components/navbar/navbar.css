@@ -46,7 +46,7 @@ nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #0A0047;
+        background: #fff;
         padding: 10px 30px;
     }
 
@@ -60,7 +60,7 @@ nav {
         left: -300px;
         width: 200px;
         height: 100vh;
-        background: #0A0047;
+        background: #fff;
         padding: 40px 0 0 10px;
         transition: .5s ease-in-out;
     }
@@ -79,6 +79,7 @@ nav {
 
     .mobile i {
         font-size: 22px;
+        color: black;
         cursor: pointer;
     }
 }
