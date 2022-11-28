@@ -1,4 +1,8 @@
 .home {
-    background: #ccc;
+    background: #E8E8E8;
     height: 80vh;
+}
+
+.content {
+    margin: 200px 0;
 }
