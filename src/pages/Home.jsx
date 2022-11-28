@@ -20,8 +20,10 @@ function Home() {
                             </p>
                             <button className="shop-btn">SHOP NOW</button>
                         </div>
-                        <div className="col-md-8">
-                            <img src={image} />
+                        <div className="col-md-4">
+                            <div className="image">
+                                <img src={image} />
+                            </div>
                         </div>
                     </div>
                 </div>
