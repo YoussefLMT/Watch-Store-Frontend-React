@@ -7,7 +7,13 @@ function Home() {
     <>
       <Navbar />
       <div className="home">
-        
+        <div className="container">
+            <div className="row">
+                <div className="col-md-4">
+                    <h2>Choose your watch now!</h2>
+                </div>
+            </div>
+        </div>
       </div>
     </>
   )
