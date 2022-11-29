@@ -3,7 +3,8 @@ import Navbar from "../components/navbar/Navbar"
 import './home.css'
 import image from '../assets/watches_PNG101453.png'
 import './features.css'
-
+import Feature from '../components/Feature'
+import img1 from '../assets/cash-on-delivery.png'
 
 function Home() {
     return (
@@ -36,6 +37,7 @@ function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 <div class="content">
+                    <Feature image={img1} name="Cool Products" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
                 </div>
             </section>
         </>
