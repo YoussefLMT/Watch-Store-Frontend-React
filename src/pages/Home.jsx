@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/Navbar"
 import './home.css'
 import image from '../assets/watches_PNG101453.png'
 import Feature from '../components/Feature'
-import img1 from '../assets/watch.png'
+import img1 from '../assets/watch_p.png'
 import img2 from '../assets/cash-on-delivery.png'
 import img3 from '../assets/free-delivery.png'
 import Category from '../components/Category'
