@@ -7,6 +7,9 @@ import img1 from '../assets/watch.png'
 import img2 from '../assets/cash-on-delivery.png'
 import img3 from '../assets/free-delivery.png'
 import Category from '../components/Category'
+import img4 from '../assets/f_watch.png'
+import img5 from '../assets/smart.png'
+import img6 from '../assets/classic.png'
 
 
 function Home() {
@@ -52,10 +55,10 @@ function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
                 <div class="content">
-                    <Category image={img1} name="Cool Products" />
-                    <Category image={img1} name="Cool Products" />
-                    <Category image={img1} name="Cool Products" />
-                    <Category image={img1} name="Cool Products" />
+                    <Category image={img1} name="Male Watches" />
+                    <Category image={img4} name="Female Watches" />
+                    <Category image={img5} name="Smart Watches" />
+                    <Category image={img6} name="Classic Watches" />
 
                 </div>
             </section>

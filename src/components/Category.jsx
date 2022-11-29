@@ -8,7 +8,7 @@ function Category(props) {
                 <img src={props.image} />
             </div>
             <div class="text">
-                <h3>{props.name}</h3>
+                <h5>{props.name}</h5>
             </div>
         </div>
     )
