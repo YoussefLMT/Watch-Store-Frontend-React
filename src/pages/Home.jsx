@@ -2,9 +2,11 @@ import React from 'react'
 import Navbar from "../components/navbar/Navbar"
 import './home.css'
 import image from '../assets/watches_PNG101453.png'
-import './features.css'
 import Feature from '../components/Feature'
-import img1 from '../assets/cash-on-delivery.png'
+import img1 from '../assets/watch.png'
+import img2 from '../assets/cash-on-delivery.png'
+import img3 from '../assets/free-delivery.png'
+
 
 function Home() {
     return (
@@ -38,6 +40,8 @@ function Home() {
                 </div>
                 <div class="content">
                     <Feature image={img1} name="Cool Products" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
+                    <Feature image={img3} name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
+                    <Feature image={img2} name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
                 </div>
             </section>
         </>

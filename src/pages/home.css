@@ -22,12 +22,12 @@
     border-radius: 5px;
 }
 
-.image {
+.home .image {
     width: 300px;
     margin: 100px 0 0 200px;
 }
 
-.image img {
+.home .image img {
     width: 100%;
 }
 
@@ -41,6 +41,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 40px;
+    /* margin-right: 100px; */
 }
 
 .title-txt {
@@ -91,6 +92,24 @@
     .image img {
         display: none;
     }
+
+
+    .features {
+        padding: 100px 0px;
+    }
+
+    /* .features .content {
+        margin-right: 20px;
+    } */
+
+    .title-txt {
+        font-size: 30px;
+    }
+
+    .title p {
+        text-align: center;
+        padding: 0 20px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -103,18 +122,5 @@
 
     .image img {
         display: none;
-    }
-
-    .features {
-        padding: 100px 20px;
-    }
-
-    .title-txt {
-        font-size: 30px;
-    }
-
-    .title p {
-        text-align: center;
-        padding: 0 20px;
     }
 }
