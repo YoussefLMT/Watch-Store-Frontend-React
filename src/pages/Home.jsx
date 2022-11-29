@@ -8,7 +8,7 @@ function Home() {
     return (
         <>
             <Navbar />
-            <div className="home">
+            <section className="home">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5 content">
@@ -27,7 +27,16 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="features">
+                <div class="title">
+                    <h2 class="title-txt">Our <span>Features</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="content">
+                </div>
+            </section>
         </>
     )
 }
