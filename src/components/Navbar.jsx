@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../logo.svg'
 import './navbar.css'
 
 function Navbar() {
@@ -13,10 +12,10 @@ function Navbar() {
         <Link to="/"><h2><span class="txt">W</span>S</h2></Link>
         <div>
           <ul className={clicked ? 'navbar active' : 'navbar'}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#">Shop</a></li>
-            <li><a href="/#">About</a></li>
-            <li><a href="/#">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/#">Shop</Link></li>
+            <li><Link to="/#">About</Link></li>
+            <li><Link to="/#">Contact</Link></li>
           </ul>
         </div>
         <div className='mobile' onClick={() => setCicked(clicked => !clicked)}>
