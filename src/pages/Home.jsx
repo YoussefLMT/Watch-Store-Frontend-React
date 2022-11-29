@@ -44,6 +44,16 @@ function Home() {
                     <Feature image={img2} name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
                 </div>
             </section>
+
+            <section class="categories">
+                <div class="title">
+                    <h2 class="title-txt">Our <span>Categories</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+                <div class="content">
+
+                </div>
+            </section>
         </>
     )
 }
