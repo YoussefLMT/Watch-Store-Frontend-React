@@ -39,7 +39,7 @@
 }
 
 .text-input:focus {
-    border: 3px solid #006669;
+    border: 3px solid #C8830A;
 }
 
 .btn {
@@ -63,8 +63,14 @@
     background: #875D12;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .auth-content {
         width: 80%;
+    }
+}
+
+@media (max-width: 1444px) {
+    .auth-content {
+        width: 460px;
     }
 }
