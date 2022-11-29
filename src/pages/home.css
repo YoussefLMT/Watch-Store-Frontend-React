@@ -3,16 +3,16 @@
     height: 80vh;
 }
 
-.content {
+.home .content {
     margin: 150px 0 0 100px;
 }
 
-.content p {
+.home .content p {
     font-size: 17px;
     font-weight: 500;
 }
 
-.content .shop-btn {
+.home .content .shop-btn {
     margin-top: 8px;
     padding: 10px 20px;
     background: black;
@@ -41,7 +41,6 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 40px;
-    /* margin-right: 100px; */
 }
 
 .title-txt {
@@ -106,10 +105,6 @@
         padding: 100px 0px;
     }
 
-    /* .features .content {
-        margin-right: 20px;
-    } */
-
     .title-txt {
         font-size: 30px;
     }
@@ -121,7 +116,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    .content {
+    .home .content {
         margin: 50px auto;
         width: 80%;
         padding: 20px;
