@@ -44,12 +44,14 @@
 
 .btn {
     padding: 10px 5px;
-    background: #3498db;
+    margin-top: 10px;
+    background: #C8830A;
     color: white;
     border: 1px solid transparent;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    width: 100%;
 }
 
 .btn-big {
@@ -58,7 +60,7 @@
 
 .btn:hover {
     color: white;
-    background: #005255;
+    background: #875D12;
 }
 
 @media (max-width: 600px) {
