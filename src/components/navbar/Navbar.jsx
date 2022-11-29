@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <>
       <nav>
-        <a href="/"><img src={logo} /></a>
+        <a href="/"><h2><span class="txt">W</span>S</h2></a>
         <div>
           <ul className={clicked ? 'navbar active' : 'navbar'}>
             <li><a href="/">Home</a></li>

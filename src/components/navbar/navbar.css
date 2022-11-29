@@ -10,6 +10,21 @@ nav {
     padding: 10px 80px;
 }
 
+nav h2 {
+    color: black;
+    font-weight: 600;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav .txt {
+    color: #EDCB8F;
+}
+
 .navbar {
     display: flex;
     align-items: center;
