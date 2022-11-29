@@ -1,4 +1,5 @@
 import React from 'react'
+import './category.css'
 
 function Category(props) {
     return (

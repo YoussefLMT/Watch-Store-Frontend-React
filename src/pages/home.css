@@ -67,6 +67,14 @@
     font-weight: 500;
 }
 
+.categories .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
 @media only screen and (max-width: 768px) {
     .content {
         margin: 50px 0;

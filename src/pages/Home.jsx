@@ -6,6 +6,7 @@ import Feature from '../components/Feature'
 import img1 from '../assets/watch.png'
 import img2 from '../assets/cash-on-delivery.png'
 import img3 from '../assets/free-delivery.png'
+import Category from '../components/Category'
 
 
 function Home() {
@@ -51,6 +52,10 @@ function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
                 <div class="content">
+                    <Category image={img1} name="Cool Products" />
+                    <Category image={img1} name="Cool Products" />
+                    <Category image={img1} name="Cool Products" />
+                    <Category image={img1} name="Cool Products" />
 
                 </div>
             </section>
