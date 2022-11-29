@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../logo.svg'
 import './navbar.css'
 
@@ -9,7 +10,7 @@ function Navbar() {
   return (
     <>
       <nav>
-        <a href="/"><h2><span class="txt">W</span>S</h2></a>
+        <Link to="/"><h2><span class="txt">W</span>S</h2></Link>
         <div>
           <ul className={clicked ? 'navbar active' : 'navbar'}>
             <li><a href="/">Home</a></li>
