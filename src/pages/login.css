@@ -68,9 +68,3 @@
         width: 80%;
     }
 }
-
-@media (max-width: 1444px) {
-    .auth-content {
-        width: 460px;
-    }
-}

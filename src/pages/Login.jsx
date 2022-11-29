@@ -9,7 +9,7 @@ function Login() {
             <Navbar />
             <div class="auth-content">
                 <form>
-                    <h2 class="form-title">Register</h2>
+                    <h2 class="form-title">Login</h2>
                     <div>
                         <label>Email</label>
                         <input type="email" class="text-input" />
@@ -21,7 +21,7 @@ function Login() {
                     <div>
                         <button type="button" class="btn btn-big">Register</button>
                     </div>
-                    <p>Or <Link to="/login">Login</Link>
+                    <p>Or <Link to="/register">Register</Link>
                     </p>
                 </form>
             </div>
