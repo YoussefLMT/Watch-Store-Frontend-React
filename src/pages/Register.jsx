@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './register.css'
 
 function Register() {
+
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        password: '',
+        error_list: [],
+    });
+
     return (
         <>
             <Navbar />
