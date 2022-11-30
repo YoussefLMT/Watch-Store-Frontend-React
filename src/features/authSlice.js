@@ -18,19 +18,17 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
     try {
         const response = await axiosInstance.post('api/login', data)
 
-        if(responce.data.status === 201) {
+        if(response.data.status === 201) {
             Toast.fire({
                 icon: 'success',
                 title: response.data.message
             })
-        } else if(responce.data.status === 401) {
+        } else if(response.data.status === 401) {
             Toast.fire({
                 icon: 'errpr',
                 title: response.data.message
             })
             return
-        } else {
-            thunkAPI.dispatch(setError(response.data.validation_err))
         }
 
         if(response.data) {
