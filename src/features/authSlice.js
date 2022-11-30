@@ -28,7 +28,6 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
                 icon: 'errpr',
                 title: response.data.message
             })
-            return
         }
 
         if(response.data) {
