@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './login.css'
 
 function Login() {
+
+    const [form, setForm] = useState({
+        email: '',
+        password: '',
+        error_list: [],
+    });
+    
     return (
         <>
             <Navbar />
