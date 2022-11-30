@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './register.css'
 import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 function Register() {
 
@@ -12,6 +13,18 @@ function Register() {
         password: '',
         error_list: [],
     });
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     const handleChange = (e) => {
         e.persist();
@@ -30,7 +43,10 @@ function Register() {
         const response = await axiosInstance.post('/register', data)
 
         if (response.data.status === 200) {
-            console.log(response.data.message)
+            Toast.fire({
+                icon: 'success',
+                title: response.data.message
+            })
         } else {
             setForm({ ...form, error_list: response.data.validation_err });
         }
