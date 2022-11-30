@@ -19,12 +19,12 @@ function Login() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const login = (e) => {
-        e.preventDefault();
+    const login = () => {
+        // e.preventDefault();
     
         const data = {
           email: form.email,
-          password: form.password,
+          password: form.password
         }
     
         dispatch(login(data))
@@ -46,7 +46,7 @@ function Login() {
                         <input type="password" name="password" value={form.password} onChange={handleChange} class="text-input" />
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-big">Register</button>
+                        <button type="submit" class="btn btn-big">Login</button>
                     </div>
                     <p>Or <Link to="/register">Register</Link>
                     </p>
