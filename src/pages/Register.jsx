@@ -12,6 +12,11 @@ function Register() {
         error_list: [],
     });
 
+    const handleChange = (e) => {
+        e.persist();
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
+
     return (
         <>
             <Navbar />
@@ -20,15 +25,15 @@ function Register() {
                     <h2 class="form-title">Register</h2>
                     <div>
                         <label>Name</label>
-                        <input type="text" class="text-input" />
+                        <input type="text" value={form.name} onChange={handeChange} class="text-input" />
                     </div>
                     <div>
                         <label>Email</label>
-                        <input type="email" class="text-input" />
+                        <input type="email" value={form.email} onChange={handeChange} class="text-input" />
                     </div>
                     <div>
                         <label>Password</label>
-                        <input type="password" class="text-input" />
+                        <input type="password" value={form.password} onChange={handeChange} class="text-input" />
                     </div>
                     <div>
                         <button type="button" class="btn btn-big">Register</button>
