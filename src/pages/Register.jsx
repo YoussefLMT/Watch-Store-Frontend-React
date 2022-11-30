@@ -61,14 +61,17 @@ function Register() {
                     <div>
                         <label>Name</label>
                         <input type="text" name="name" value={form.name} onChange={handleChange} className="text-input" />
+                        <span className='text-danger'>{form.error_list.name}</span>
                     </div>
                     <div>
                         <label>Email</label>
                         <input type="email" name="email" value={form.email} onChange={handleChange} className="text-input" />
+                        <span className='text-danger'>{form.error_list.email}</span>
                     </div>
                     <div>
                         <label>Password</label>
                         <input type="password" name="password" value={form.password} onChange={handleChange} className="text-input" />
+                        <span className='text-danger'>{form.error_list.password}</span>
                     </div>
                     <div>
                         <button type="submit" className="btn btn-big">Register</button>
