@@ -1,35 +1,42 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import Swal from 'sweetalert2'
 
-export const logIn = createAsyncThunk('auth/login', async (data, thunkAPI) => {
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
+export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
     try {
-        const responce = await axios.post('api/login', data)
+        const response = await axios.post('api/login', data)
 
         if(responce.data.status === 201) {
-            Swal.fire(
-                'Success',
-                responce.data.message,
-                'success'
-            );
+            Toast.fire({
+                icon: 'success',
+                title: response.data.message
+            })
         } else if(responce.data.status === 401) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: responce.data.message,
-            });
+            Toast.fire({
+                icon: 'errpr',
+                title: response.data.message
+            })
             return
         } else {
-            thunkAPI.dispatch(setError(responce.data.validation_err))
+            thunkAPI.dispatch(setError(response.data.validation_err))
         }
 
-        if(responce.data) {
-            localStorage.setItem('token', responce.data.token)
+        if(response.data) {
+            localStorage.setItem('token', response.data.token)
         }
 
-        thunkAPI.dispatch(setUser(responce.data.role))
-        thunkAPI.dispatch(setToken(localStorage.getItem("token")))
-
-        return responce.data
+        return response.data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
     }
