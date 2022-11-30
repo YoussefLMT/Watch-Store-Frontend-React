@@ -10,6 +10,11 @@ function Login() {
         password: '',
         error_list: [],
     });
+
+    const handleChange = (e) => {
+        e.persist();
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
     
     return (
         <>
@@ -19,14 +24,14 @@ function Login() {
                     <h2 class="form-title">Login</h2>
                     <div>
                         <label>Email</label>
-                        <input type="email" class="text-input" />
+                        <input type="email" name="email" value={form.email} onChange={handleChange} class="text-input" />
                     </div>
                     <div>
                         <label>Password</label>
-                        <input type="password" class="text-input" />
+                        <input type="password" name="password" value={form.password} onChange={handleChange} class="text-input" />
                     </div>
                     <div>
-                        <button type="button" class="btn btn-big">Register</button>
+                        <button type="submit" class="btn btn-big">Register</button>
                     </div>
                     <p>Or <Link to="/register">Register</Link>
                     </p>
