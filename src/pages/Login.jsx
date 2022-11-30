@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './login.css'
 
 function Login() {
+
+    const dispatch = useDispatch()
 
     const [form, setForm] = useState({
         email: '',
@@ -15,12 +18,24 @@ function Login() {
         e.persist();
         setForm({ ...form, [e.target.name]: e.target.value });
     }
+
+    const login = (e) => {
+        e.preventDefault();
+    
+        const data = {
+          email: form.email,
+          password: form.password,
+        }
+    
+        dispatch(login(data))
+      }
+    
     
     return (
         <>
             <Navbar />
             <div class="auth-content">
-                <form>
+                <form onSubmit={login}>
                     <h2 class="form-title">Login</h2>
                     <div>
                         <label>Email</label>
