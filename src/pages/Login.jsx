@@ -19,18 +19,18 @@ function Login() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const login = () => {
-        // e.preventDefault();
-    
+    const login = (e) => {
+        e.preventDefault();
+
         const data = {
-          email: form.email,
-          password: form.password
+            email: form.email,
+            password: form.password
         }
-    
+
         dispatch(login(data))
-      }
-    
-    
+    }
+
+
     return (
         <>
             <Navbar />
