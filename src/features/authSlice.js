@@ -16,7 +16,7 @@ const Toast = Swal.mixin({
 
 export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
     try {
-        const response = await axiosInstance.post('api/login', data)
+        const response = await axiosInstance.post('/login', data)
 
         if(response.data.status === 201) {
             Toast.fire({
