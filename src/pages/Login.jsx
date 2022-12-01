@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './login.css'
+import { login } from '../features/authSlice'
 
 function Login() {
 
@@ -19,12 +20,16 @@ function Login() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const login = (e) => {
-        e.preventDefault();
+    const loginFunc = (e) => {
+        e.preventDefault()
 
         const data = {
             email: form.email,
             password: form.password
+        }
+
+        if (!data.email || !data.password) {
+            return
         }
 
         dispatch(login(data))
@@ -35,7 +40,7 @@ function Login() {
         <>
             <Navbar />
             <div class="auth-content">
-                <form onSubmit={login}>
+                <form onSubmit={loginFunc}>
                     <h2 class="form-title">Login</h2>
                     <div>
                         <label>Email</label>
