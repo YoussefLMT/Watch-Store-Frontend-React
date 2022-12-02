@@ -45,7 +45,7 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
 
 export const getUserData = createAsyncThunk('auth/getUserData', async (_, thunkAPI) => {
     try {
-        const response = await axios.get('/get-user')
+        const response = await axiosInstance.get('/get-user')
 
         return response.data
     } catch (error) {
