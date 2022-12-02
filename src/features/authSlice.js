@@ -53,6 +53,11 @@ const initialState = {
 const authSlice = createSlice({
     name: "auth",
     initialState,
+    reducers: {
+        setUser: (state, action) => {
+            state.user = action.payload
+        },
+    },   
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action) => {
             state.completed = true
