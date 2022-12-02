@@ -34,6 +34,8 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
             localStorage.setItem('token', response.data.token)
         }
 
+        thunkAPI.dispatch(setUser(response.data.role))
+
         return response.data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
@@ -75,5 +77,7 @@ const authSlice = createSlice({
         })
     }
 })
+
+export const { setUser } = authSlice.actions
 
 export default authSlice.reducer
