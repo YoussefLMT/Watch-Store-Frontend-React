@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import axiosInstance from '../axios'
 
@@ -14,15 +15,18 @@ const Toast = Swal.mixin({
     }
 })
 
+const navigate = useNavigate()
+
 export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
     try {
         const response = await axiosInstance.post('/login', data)
 
         if(response.data.status === 200) {
-            Toast.fire({
-                icon: 'success',
-                title: response.data.message
-            })
+            if(response.data.role === 'user'){
+                navigate('/')
+            }else if(response.data.role === 'admin'){
+                navigate('/dashboard')
+            }
         } else if(response.data.status === 401) {
             Toast.fire({
                 icon: 'errpr',
