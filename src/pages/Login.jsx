@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './login.css'
@@ -8,6 +8,10 @@ import { login } from '../features/authSlice'
 function Login() {
 
     const dispatch = useDispatch()
+
+    const { user } = useSelector((state) => state.auth)
+
+    console.log(user)
 
     const [form, setForm] = useState({
         email: '',
