@@ -4,8 +4,21 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoutes from "./utils/PrivateRoutes";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserData } from './features/authSlice';
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  const { token } = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    if(token) {
+      dispatch(getUserData())
+    }
+  }, [dispatch])
+
   return (
     <BrowserRouter>
       <Routes>
