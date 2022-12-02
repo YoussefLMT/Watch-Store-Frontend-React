@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './login.css'
 import { login } from '../features/authSlice'
@@ -11,7 +11,20 @@ function Login() {
 
     const { user } = useSelector((state) => state.auth)
 
-    console.log(user)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (user) {
+
+            if (user.role === "user") {
+                navigate('/')
+            } else if (user.role === "admin") {
+                navigate('/dashboard')
+            }
+
+        }
+
+    }, [user, navigate, dispatch])
 
     const [form, setForm] = useState({
         email: '',
