@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux'
 import { Navigate, Outlet } from 'react-router-dom'
 
 function PrivateRoutes() {
-    let token = localStorage.getItem('token')
-    const { user } = useSelector((state) => state.auth)
+    const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role')
+    // const { user } = useSelector((state) => state.auth)
     return (
-        token && user.role === 'admin' ? <Outlet /> : <Navigate to="/" />
+        token && role === 'admin' ? <Outlet /> : <Navigate to="/" />
     )
 }
 

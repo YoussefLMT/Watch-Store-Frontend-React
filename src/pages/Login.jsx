@@ -9,22 +9,22 @@ function Login() {
 
     const dispatch = useDispatch()
 
-    const { user } = useSelector((state) => state.auth)
+    // const { user } = useSelector((state) => state.auth)
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (user) {
+        if (localStorage.getItem('token')) {
 
-            if (user.role === "user") {
+            if (localStorage.getItem('role') === "user") {
                 navigate('/')
-            } else if (user.role === "admin") {
+            } else if (localStorage.getItem('role') === "admin") {
                 navigate('/dashboard')
             }
 
         }
 
-    }, [user, navigate, dispatch])
+    }, [navigate, dispatch])
 
     const [form, setForm] = useState({
         email: '',

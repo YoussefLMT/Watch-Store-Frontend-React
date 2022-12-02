@@ -32,6 +32,7 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
 
         if(response.data) {
             localStorage.setItem('token', response.data.token)
+            localStorage.setItem('role', response.data.role)
         }
 
         thunkAPI.dispatch(setUser(response.data.role))
@@ -54,10 +55,12 @@ export const getUserData = createAsyncThunk('auth/getUserData', async (_, thunkA
 })
 
 const token = localStorage.getItem("token")
+const role = localStorage.getItem("role")
 
 const initialState = {
     user: null,
     token: token ? token : null,
+    role: role ? role : null,
     completed: false,
     loading: false,
     error: false
