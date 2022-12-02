@@ -86,6 +86,23 @@ const authSlice = createSlice({
             state.completed = false
             state.loading = false
         })
+
+        builder.addCase(getUserData.fulfilled, (state, action) => {
+            state.completed = true
+            state.loading = false
+            state.error = false
+            state.user = action.payload.userData
+        })
+        builder.addCase(getUserData.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getUserData.rejected, (state) => {
+            state.error = true
+            state.completed = false
+            state.loading = false
+            state.user = null
+            state.token = null
+        })
     }
 })
 
