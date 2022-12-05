@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import axiosInstance from '../axios';
 import Sidebar from '../components/Sidebar'
 import './products.css'
 
@@ -24,6 +25,26 @@ function Products() {
     const handleImage = (e) => {
         e.persist();
         setImage({ image: e.target.files[0] })
+    }
+
+    const addNewProduct = async (e) => {
+        e.preventDefault();
+
+        const data = new FormData();
+        data.append('name', form.name);
+        data.append('price', form.price);
+        data.append('quantity', form.quantity);
+        data.append('category', form.catergory);
+        data.append('description', form.description);
+        data.append('image', image.image);
+
+        const response = await axiosInstance.post('/add-product', data)
+
+        if (response.data.status === 200) {
+            console.log(response.data.message)
+        } else {
+            setForm({ ...form, errors: response.data.validation_err });
+        }
     }
 
     return (
@@ -53,7 +74,7 @@ function Products() {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <form>
+                                <form onSubmit={addNewProduct}>
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input type="text" name='name' value={form.name} onChange={handleChange} className="form-control" id="name" />
