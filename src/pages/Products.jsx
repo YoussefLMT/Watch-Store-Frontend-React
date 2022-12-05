@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 import ProductsTable from '../components/ProductsTable';
@@ -23,6 +23,8 @@ function Products() {
     const [image, setImage] = useState();
 
     const dispatch = useDispatch()
+
+    const { products } = useSelector((state) => state.products)
 
     useEffect(() => {
         dispatch(getProducts())
@@ -89,7 +91,7 @@ function Products() {
                         </button>
                     </div>
                     <div className="card-body">
-                        <ProductsTable />
+                        <ProductsTable products={products}/>
                     </div>
                 </div>
 

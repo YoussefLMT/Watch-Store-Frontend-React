@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductsTable() {
+function ProductsTable(props) {
     return (
         <>
             <table className="table">
@@ -16,17 +16,21 @@ function ProductsTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    
-                                <tr>
-                                    <th scope="row">66</th>
-                                    <td>tt</td>
-                                    <td>tt</td>
-                                    <td>tt</td>
-                                    <td>tt</td>
-                                    <td>tt</td>
-                                    <td>tt</td>
+                    {
+                        props.products.map((product) => {
+                            return (
+                                <tr key={product.id}>
+                                    <th scope="row">{product.id}</th>
+                                    <td>{product.name}</td>
+                                    <td>{product.price}</td>
+                                    <td>{product.quantity}</td>
+                                    <td>{product.category}</td>
+                                    <td>{product.description}</td>
+                                    <img src={`http://127.0.0.1:8000/${product.image}`}/>
                                 </tr>
-                         
+                            )
+                        })
+                    }
                 </tbody>
             </table>
         </>
