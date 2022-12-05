@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from './features/authSlice';
+import Products from './pages/Products';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
 
         <Route element={<PrivateRoutes />}>
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/products' element={<Products />} />
         </Route>
 
       </Routes>
