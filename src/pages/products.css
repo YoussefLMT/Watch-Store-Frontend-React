@@ -6,3 +6,11 @@ main {
     flex-grow: 1;
     padding: 1rem;
 }
+
+.products-card {
+    margin: 50px auto;
+}
+
+.btn-add {
+    float: right
+}

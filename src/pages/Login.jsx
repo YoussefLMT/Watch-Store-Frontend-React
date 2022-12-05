@@ -68,7 +68,7 @@ function Login() {
                         <input type="password" name="password" value={form.password} onChange={handleChange} class="text-input" />
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-big">Login</button>
+                        <button type="submit" class="btn-login">Login</button>
                     </div>
                     <p>Or <Link to="/register">Register</Link>
                     </p>

@@ -74,7 +74,7 @@ function Register() {
                         <span className='text-danger'>{form.error_list.password}</span>
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-big">Register</button>
+                        <button type="submit" className="btn-register">Register</button>
                     </div>
                     <p>Or <Link to="/login">Login</Link>
                     </p>

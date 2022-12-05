@@ -42,7 +42,7 @@
     border: 3px solid #C8830A;
 }
 
-.btn {
+.btn-login {
     padding: 10px 5px;
     margin-top: 10px;
     background: #C8830A;
@@ -54,11 +54,7 @@
     width: 100%;
 }
 
-.btn-big {
-    padding: 10px 10px;
-}
-
-.btn:hover {
+.btn-login:hover {
     color: white;
     background: #875D12;
 }
