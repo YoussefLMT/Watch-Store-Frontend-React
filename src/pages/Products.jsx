@@ -24,7 +24,7 @@ function Products() {
 
     const dispatch = useDispatch()
 
-    const { products } = useSelector((state) => state.products)
+    const { products, loading } = useSelector((state) => state.products)
 
     useEffect(() => {
         dispatch(getProducts())
@@ -92,6 +92,7 @@ function Products() {
                     </div>
                     <div className="card-body">
                         <ProductsTable products={products}/>
+                        {loading && <h4 className='text-center'>Loading...</h4>}
                     </div>
                 </div>
 
