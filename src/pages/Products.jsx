@@ -9,7 +9,7 @@ function Products() {
             <main>
                 <h1>Products</h1>
 
-                <div className="card products-card" style={{ width: "1100px" }}>
+                <div className="card products-card">
                     <div className="card-header">
                         Cars Management
 
