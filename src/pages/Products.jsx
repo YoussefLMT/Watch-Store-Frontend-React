@@ -14,6 +14,8 @@ function Products() {
         errors: [],
     });
 
+    const [image, setImage] = useState();
+
     const handleChange = (e) => {
         e.persist();
         setForm({ ...form, [e.target.name]: e.target.value });
