@@ -1,6 +1,18 @@
 import React from 'react'
+import axiosInstance from '../axios';
 
 function ProductsTable(props) {
+
+    const deleteProduct = async (e, id) => {
+        const deleteBtn = e.currentTarget;
+        try {
+            await axiosInstance.delete(`/delete-product/${id}`)
+            deleteBtn.closest('tr').remove();
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <table className="table">
@@ -29,7 +41,7 @@ function ProductsTable(props) {
                                     <td>{product.description}</td>
                                     <img src={`http://127.0.0.1:8000/${product.image}`}/>
                                     <td>
-                                        <button type="button" class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                                        <button type="button" onClick={(e) => deleteProduct(e, product.id)} class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></button>
                                         <button type="button" style={{marginLeft: '10px', color: 'white'}} data-bs-toggle="modal" data-bs-target="#updateUserModal" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                                     </td>
                                 </tr>
