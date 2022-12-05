@@ -11,8 +11,13 @@ function Products() {
         quantity: '',
         catergory: '',
         description: '',
-        error_list: [],
+        errors: [],
     });
+
+    const handleChange = (e) => {
+        e.persist();
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
 
     return (
         <div className='products'>
@@ -22,7 +27,7 @@ function Products() {
 
                 <div className="card products-card">
                     <div className="card-header">
-                        Cars Management
+                        Products Management
 
                         {/* Button trigger add product modal  */}
                         <button type="button" className="btn btn-primary btn-add" data-bs-toggle="modal" data-bs-target="#addProductModal">
@@ -44,23 +49,23 @@ function Products() {
                                 <form>
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
-                                        <input type="text" name='name' className="form-control" id="name" />
+                                        <input type="text" name='name' value={form.name} onChange={handleChange} className="form-control" id="name" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="price" className="form-label">Price</label>
-                                        <input type="text" name='price' className="form-control" id="price" />
+                                        <input type="text" name='price' value={form.price} onChange={handleChange} className="form-control" id="price" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="quantity" className="form-label">Quantity</label>
-                                        <input type="text" name='quantity' className="form-control" id="quantity" />
+                                        <input type="text" name='quantity' value={form.quantity} onChange={handleChange} className="form-control" id="quantity" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="category" className="form-label">Category</label>
-                                        <input type="text" name='category' className="form-control" id="category" />
+                                        <input type="text" name='category' value={form.catergory} onChange={handleChange} className="form-control" id="category" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="description" className="form-label">Description</label>
-                                        <input type="text" name='description' className="form-control" id="description" />
+                                        <input type="text" name='description' value={form.description} onChange={handleChange} className="form-control" id="description" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="image" class="form-label">Image</label>
