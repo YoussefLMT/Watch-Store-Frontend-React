@@ -13,6 +13,15 @@ function ProductsTable(props) {
         }
     }
 
+    const getProduct = async (id) => {
+        try {
+            const response = await axiosInstance.get(`get-product/${id}`)
+            console.log(response.data.product)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <table className="table">
@@ -42,7 +51,7 @@ function ProductsTable(props) {
                                     <img src={`http://127.0.0.1:8000/${product.image}`}/>
                                     <td>
                                         <button type="button" onClick={(e) => deleteProduct(e, product.id)} class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></button>
-                                        <button type="button" style={{marginLeft: '10px', color: 'white'}} data-bs-toggle="modal" data-bs-target="#updateUserModal" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                                        <button type="button" style={{marginLeft: '10px', color: 'white'}} data-bs-toggle="modal" data-bs-target="#updateUserModal" onClick={() => getProduct(product.id)} class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                                     </td>
                                 </tr>
                             )
