@@ -10,7 +10,7 @@ function Products() {
         name: '',
         price: '',
         quantity: '',
-        catergory: '',
+        category: '',
         description: '',
         errors: [],
     });
@@ -34,7 +34,7 @@ function Products() {
         data.append('name', form.name);
         data.append('price', form.price);
         data.append('quantity', form.quantity);
-        data.append('category', form.catergory);
+        data.append('category', form.category);
         data.append('description', form.description);
         data.append('image', image.image);
 
@@ -89,7 +89,7 @@ function Products() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="category" className="form-label">Category</label>
-                                        <input type="text" name='category' value={form.catergory} onChange={handleChange} className="form-control" id="category" />
+                                        <input type="text" name='category' value={form.category} onChange={handleChange} className="form-control" id="category" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="description" className="form-label">Description</label>
@@ -100,7 +100,7 @@ function Products() {
                                         <input class="form-control" name='image' onChange={handleImage} type="file" id="image" />
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="submit" className="btn btn-primary">Save changes</button>
+                                        <button type="submit" className="btn btn-primary">Save</button>
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </form>
