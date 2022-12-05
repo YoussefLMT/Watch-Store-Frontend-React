@@ -94,26 +94,32 @@ function Products() {
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input type="text" name='name' value={form.name} onChange={handleChange} className="form-control" id="name" />
+                                        <span className='text-danger'>{form.errors.name}</span>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="price" className="form-label">Price</label>
                                         <input type="text" name='price' value={form.price} onChange={handleChange} className="form-control" id="price" />
+                                        <span className='text-danger'>{form.errors.price}</span>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="quantity" className="form-label">Quantity</label>
                                         <input type="text" name='quantity' value={form.quantity} onChange={handleChange} className="form-control" id="quantity" />
+                                        <span className='text-danger'>{form.errors.quantity}</span>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="category" className="form-label">Category</label>
                                         <input type="text" name='category' value={form.category} onChange={handleChange} className="form-control" id="category" />
+                                        <span className='text-danger'>{form.errors.category}</span>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="description" className="form-label">Description</label>
                                         <input type="text" name='description' value={form.description} onChange={handleChange} className="form-control" id="description" />
+                                        <span className='text-danger'>{form.errors.description}</span>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="image" class="form-label">Image</label>
+                                        <label htmlFor="image" class="form-label">Image</label>
                                         <input class="form-control" name='image' onChange={handleImage} type="file" id="image" />
+                                        <span className='text-danger'>{form.errors.image}</span>
                                     </div>
                                     <div className="modal-footer">
                                         <button type="submit" className="btn btn-primary">Save</button>
