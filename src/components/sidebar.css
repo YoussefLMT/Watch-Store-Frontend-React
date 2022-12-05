@@ -9,6 +9,48 @@
     transition: .5s ease-in-out;
 }
 
+.routes {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.link {
+    display: flex;
+    color: #fff;
+    gap: 15px;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-right: 4px solid transparent;
+    transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link:hover {
+    border-right: 4px solid white;
+    background: #64748b;
+    color: white;
+    transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link .icon {
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+.link .text {
+    margin-top: 6px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.active {
+    border-right: 4px solid white;
+    background: #64748b;
+}
+
 @media only screen and (max-width: 600px) {
     .sidebar {
         display: none;
