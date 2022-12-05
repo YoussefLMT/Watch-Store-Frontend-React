@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
+import ProductsTable from '../components/ProductsTable';
 import Sidebar from '../components/Sidebar'
 import './products.css'
 
@@ -77,6 +78,9 @@ function Products() {
                         <button type="button" className="btn btn-primary btn-add" data-bs-toggle="modal" data-bs-target="#addProductModal">
                             Add Product
                         </button>
+                    </div>
+                    <div className="card-body">
+                        <ProductsTable />
                     </div>
                 </div>
 
