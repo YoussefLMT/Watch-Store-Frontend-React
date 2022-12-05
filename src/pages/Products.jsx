@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 import ProductsTable from '../components/ProductsTable';
 import Sidebar from '../components/Sidebar'
 import './products.css'
+import { getProducts } from '../features/productsSlice';
+import { useEffect } from 'react';
 
 function Products() {
 
@@ -18,6 +21,12 @@ function Products() {
     });
 
     const [image, setImage] = useState();
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [dispatch])
 
     const Toast = Swal.mixin({
         toast: true,

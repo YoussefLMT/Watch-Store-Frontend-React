@@ -4,7 +4,7 @@ import axiosInstance from '../axios'
 export const getProducts = createAsyncThunk('products/getProducts', async () => {
     try {
         const response = await axiosInstance.get('/products')
-        console.log(response.data.products) 
+        return response.data.products
     } catch (error) {
         console.log(error)
     }
