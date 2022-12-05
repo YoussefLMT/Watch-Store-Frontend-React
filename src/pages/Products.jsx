@@ -1,8 +1,19 @@
 import React from 'react'
+import { useState } from 'react';
 import Sidebar from '../components/Sidebar'
 import './products.css'
 
 function Products() {
+
+    const [form, setForm] = useState({
+        name: '',
+        price: '',
+        quantity: '',
+        catergory: '',
+        description: '',
+        error_list: [],
+    });
+
     return (
         <div className='products'>
             <Sidebar />
