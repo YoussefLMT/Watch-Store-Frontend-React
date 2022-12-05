@@ -7,6 +7,11 @@ function ProductsTable(props) {
     const [product, setProduct] = useState({})
     const [id, setId] = useState(0)
 
+    const handleChange = (e) => {
+        e.persist();
+        setProduct({ ...product, [e.target.name]: e.target.value });
+    }
+
     const deleteProduct = async (e, id) => {
         const deleteBtn = e.currentTarget;
         try {
@@ -78,7 +83,7 @@ function ProductsTable(props) {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={updateUser}>
+                            <form>
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
                                     <input type="text" name='name' value={product?.name || ''} onChange={handleChange} className="form-control" id="name" />
