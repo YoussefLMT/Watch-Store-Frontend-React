@@ -5,27 +5,12 @@ const sidebarData = [
     {
         path: "/dashboard",
         name: "dashboard",
-        icon: <AiFillDashboard />,
+        icon: <i class="fa-solid fa-gauge"></i>,
     },
     {
-        path: "/brands",
+        path: "/products",
         name: "brands",
-        icon: <FaCarSide />,
-    },
-    {
-        path: "/cars",
-        name: "cars",
-        icon: <AiFillCar />,
-    },
-    {
-        path: "/reservations",
-        name: "reservations",
-        icon: <FaCalendarAlt />,
-    },
-    {
-        path: "/users",
-        name: "users",
-        icon: <FiUsers />,
+        icon: <i class="fa-solid fa-shop"></i>,
     },
 ];
 
