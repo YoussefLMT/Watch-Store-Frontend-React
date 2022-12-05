@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 import Sidebar from '../components/Sidebar'
 import './products.css'
@@ -16,6 +17,18 @@ function Products() {
     });
 
     const [image, setImage] = useState();
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     const handleChange = (e) => {
         e.persist();
@@ -41,7 +54,10 @@ function Products() {
         const response = await axiosInstance.post('/add-product', data)
 
         if (response.data.status === 200) {
-            console.log(response.data.message)
+            Toast.fire({
+                icon: 'success',
+                title: response.data.message
+            })
         } else {
             setForm({ ...form, errors: response.data.validation_err });
         }
