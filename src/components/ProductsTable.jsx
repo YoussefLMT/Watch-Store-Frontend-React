@@ -65,7 +65,7 @@ function ProductsTable(props) {
                                     <img src={`http://127.0.0.1:8000/${product.image}`} />
                                     <td>
                                         <button type="button" onClick={(e) => deleteProduct(e, product.id)} class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></button>
-                                        <button type="button" style={{ marginLeft: '10px', color: 'white' }} data-bs-toggle="modal" data-bs-target="#updateUserModal" onClick={() => getProduct(product.id)} class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                                        <button type="button" style={{ marginLeft: '10px', color: 'white' }} data-bs-toggle="modal" data-bs-target="#updateProductModal" onClick={() => getProduct(product.id)} class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                                     </td>
                                 </tr>
                             )
@@ -86,23 +86,23 @@ function ProductsTable(props) {
                             <form>
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
-                                    <input type="text" name='name' value={product?.name || ''} onChange={handleChange} className="form-control" id="name" />
+                                    <input type="text" name='name' value={product?.name || 'Loading...'} onChange={handleChange} className="form-control" id="name" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="price" className="form-label">Price</label>
-                                    <input type="text" name='price' value={product?.price || ''} onChange={handleChange} className="form-control" id="price" />
+                                    <input type="text" name='price' value={product?.price || 'Loading...'} onChange={handleChange} className="form-control" id="price" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="quantity" className="form-label">Quantity</label>
-                                    <input type="text" name='quantity' value={product?.quantity || ''} onChange={handleChange} className="form-control" id="quantity" />
+                                    <input type="text" name='quantity' value={product?.quantity || 'Loading...'} onChange={handleChange} className="form-control" id="quantity" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="category" className="form-label">Category</label>
-                                    <input type="text" name='category' value={product?.category || ''} onChange={handleChange} className="form-control" id="category" />
+                                    <input type="text" name='category' value={product?.category || 'Loading...'} onChange={handleChange} className="form-control" id="category" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="description" className="form-label">Description</label>
-                                    <input type="text" name='description' value={product?.description || ''} onChange={handleChange} className="form-control" id="description" />
+                                    <input type="text" name='description' value={product?.description || 'Loading...'} onChange={handleChange} className="form-control" id="description" />
                                 </div>
                                 <div className="modal-footer">
                                     <button type="submit" className="btn btn-primary">Update</button>
