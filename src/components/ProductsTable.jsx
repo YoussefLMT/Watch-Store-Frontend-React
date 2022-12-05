@@ -1,7 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react';
 import axiosInstance from '../axios';
 
 function ProductsTable(props) {
+
+    const [product, setProduct] = useState({})
+    const [id, setId] = useState(0)
 
     const deleteProduct = async (e, id) => {
         const deleteBtn = e.currentTarget;
@@ -14,13 +18,18 @@ function ProductsTable(props) {
     }
 
     const getProduct = async (id) => {
+        setId(id)
         try {
             const response = await axiosInstance.get(`get-product/${id}`)
-            console.log(response.data.product)
+            setProduct(response.data.product)
         } catch (error) {
             console.log(error)
         }
     }
+
+    useEffect(() => {
+        getProduct()
+    }, [])
 
     return (
         <>
