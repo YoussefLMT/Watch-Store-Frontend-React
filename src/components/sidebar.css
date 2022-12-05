@@ -8,10 +8,20 @@
 }
 
 .routes {
+    position: absolute;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.toggle i {
+    margin-top: 660px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
 }
 
 .link {

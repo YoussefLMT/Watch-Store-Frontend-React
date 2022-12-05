@@ -24,7 +24,7 @@ function Sidebar() {
     }
     
     return (
-        <div className="sidebar" style={{ width: clicked ? '6%' : '18%'}}>
+        <div className="sidebar" style={{ width: clicked ? '5%' : '18%'}}>
             <section className="routes">
                     {sidebarData.map((data) => (
                         <NavLink to={data.path} key={data.name} className="link">
@@ -33,12 +33,14 @@ function Sidebar() {
                             </div>
 
                             <div className="text">
-                                {data.name}
+                                {!clicked && data.name}
                             </div>
                         </NavLink>
                     ))}
                 </section>
-            <button onClick={toggle}>toggle</button>
+                <div className="toggle">
+                <i className={clicked ? "fa-solid fa-arrow-right" : "fa-solid fa-arrow-left"} onClick={toggle}></i>
+                </div>
         </div>
     )
 }
