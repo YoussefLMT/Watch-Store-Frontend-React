@@ -21,6 +21,11 @@ function Products() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
+    const handleImage = (e) => {
+        e.persist();
+        setImage({ image: e.target.files[0] })
+    }
+
     return (
         <div className='products'>
             <Sidebar />
@@ -71,7 +76,7 @@ function Products() {
                                     </div>
                                     <div class="mb-3">
                                         <label for="image" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="image" />
+                                        <input class="form-control" name='image' onChange={handleImage} type="file" id="image" />
                                     </div>
                                     <div className="modal-footer">
                                         <button type="submit" className="btn btn-primary">Save changes</button>
