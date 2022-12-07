@@ -14,7 +14,7 @@ function Pagination(props) {
                 {
                     pageNumbers.map((number) => (
                         <li key={number} className="page-item">
-                            <button className="page-link">{number}</button>
+                            <button className="page-link" onClick={() => props.paginate(number)}>{number}</button>
                         </li>
                     ))
                 }
