@@ -20,7 +20,7 @@ function Home() {
 
     const dispatch = useDispatch()
 
-    const { latest_products, loading } = useSelector((state) => state.specificProducts)
+    const { latest_products, home_products, loading } = useSelector((state) => state.specificProducts)
 
     console.log(latest_products)
 
@@ -86,7 +86,7 @@ function Home() {
                 <div class="content">
                     {
                         latest_products.map((latest_product) => {
-                            return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} description={latest_product.description} />
+                            return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} quantity={latest_product.quantity} />
                         })
                     }
                 </div>
@@ -97,7 +97,12 @@ function Home() {
                     <h2 class="title-txt">Our <span>Products</span></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
-                <div>
+                <div className="content">
+                {
+                        home_products.map((home_product) => {
+                            return <Product image={`http://127.0.0.1:8000/${home_product.image}`} name={home_product.name} price={home_product.price} quantity={home_product.quantity} />
+                        })
+                    }
                 </div>
                 <div class="title">
                     <Link to="/shop" class="see-all-btn">See All</Link>
