@@ -12,6 +12,7 @@ function Product(props) {
                 <p>{props.price} DH</p>
                 <p>Quantity: {props.quantity}</p>
             </div>
+            <Link to="shop/:id" class="btn-show">Show</Link>
         </div >
     )
 }
