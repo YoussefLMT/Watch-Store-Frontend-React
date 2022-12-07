@@ -139,7 +139,7 @@
     }
 
     .features {
-        padding: 100px 0px;
+        padding: 100px 0px 0px 0px;
     }
 
     .title-txt {
@@ -152,7 +152,7 @@
     }
 
     .latest-products {
-        padding: 100px 20px;
+        padding: 0  20px;
     }
 
     .home-products {
