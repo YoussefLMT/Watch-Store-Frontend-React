@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import './styles/navbar.css'
-import { logout, logut } from '../features/authSlice'
+import { logout } from '../features/authSlice'
 
 function Navbar() {
 
@@ -11,9 +11,7 @@ function Navbar() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const logOut = (e) => {
-    e.preventDefault()
-
+  const logOut = () => {
     dispatch(logout())
     navigate("/login")
   }
