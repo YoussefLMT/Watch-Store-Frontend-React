@@ -13,6 +13,7 @@ import img6 from '../assets/classic.png'
 import { getLatestProducts } from '../features/specificProductsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import Product from '../components/Product'
 
 function Home() {
 
@@ -82,6 +83,11 @@ function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
                 <div class="content">
+                    {
+                        latest_products.map((latest_product) => {
+                            return <Product image="http://127.0.0.1:8000/' + product.image" name={latest_product.name} price={latest_product.price} description={latest_product.description} />
+                        })
+                    }
                 </div>
             </section>
         </>
