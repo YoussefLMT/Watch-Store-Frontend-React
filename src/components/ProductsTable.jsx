@@ -1,11 +1,24 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 
 function ProductsTable(props) {
 
     const [product, setProduct] = useState({})
     const [id, setId] = useState(0)
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     const handleChange = (e) => {
         e.persist();
