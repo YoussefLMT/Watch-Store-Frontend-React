@@ -11,16 +11,21 @@ import img4 from '../assets/f_watch.png'
 import img5 from '../assets/smart.png'
 import img6 from '../assets/classic.png'
 import { getLatestProducts } from '../features/specificProductsSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 function Home() {
 
     const dispatch = useDispatch()
 
+    const { latest_products, loading } = useSelector((state) => state.specificProducts)
+
+    console.log(latest_products)
+
     useEffect(() => {
         dispatch(getLatestProducts())
     }, [dispatch])
+
     return (
         <>
             <Navbar />
