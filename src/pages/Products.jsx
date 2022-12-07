@@ -8,6 +8,7 @@ import Sidebar from '../components/Sidebar'
 import './products.css'
 import { getProducts } from '../features/productsSlice';
 import { useEffect } from 'react';
+import { store } from '../app/store';
 
 function Products() {
 
@@ -70,6 +71,7 @@ function Products() {
                 icon: 'success',
                 title: response.data.message
             })
+            store.dispatch(getProducts())
         } else {
             setForm({ ...form, errors: response.data.validation_err });
         }
