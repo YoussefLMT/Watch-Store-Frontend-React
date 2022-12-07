@@ -10,15 +10,6 @@ export const getProducts = createAsyncThunk('products/getProducts', async () => 
     }
 })
 
-export const getLatestProducts = createAsyncThunk('products/getLatestProducts', async () => {
-    try {
-        const response = await axiosInstance.get('/latest-products')
-        return response.data.products
-    } catch (error) {
-        console.log(error)
-    }
-})
-
 const initialState = {
     products: [],
     completed: false,
