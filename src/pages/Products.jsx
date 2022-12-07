@@ -129,6 +129,7 @@ function Products() {
                                         <option value="men">Men</option>
                                         <option value="women">Women</option>
                                         <option value="sport">Sport</option>
+                                        <option value="smart">Smart</option>
                                         <option value="classic">Classic</option>
                                     </select>
                                     <span className='text-danger'>{form.errors.category}</span>
