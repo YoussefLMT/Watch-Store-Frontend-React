@@ -23,13 +23,16 @@ function Products() {
 
     const [image, setImage] = useState();
 
+    const [currentPage, setCurrentPage] = useState(1)
+    const [productsPerPage] = useState(5)
+
     const dispatch = useDispatch()
 
     const { products, loading } = useSelector((state) => state.products)
 
-    
-    const indexOfLastProduct = currentPage * usersPerPage
-    const indexOfFirstProduct = indexOfLastProduct - usersPerPage
+
+    const indexOfLastProduct = currentPage * productsPerPage
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct)
 
     useEffect(() => {
