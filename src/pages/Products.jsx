@@ -9,6 +9,7 @@ import './products.css'
 import { getProducts } from '../features/productsSlice';
 import { useEffect } from 'react';
 import { store } from '../app/store';
+import Pagination from '../components/Pagination';
 
 function Products() {
 
@@ -101,8 +102,9 @@ function Products() {
                         </button>
                     </div>
                     <div className="card-body">
-                        <ProductsTable products={products} />
+                        <ProductsTable products={currentProducts} />
                         {loading && <h4 className='text-center'>Loading...</h4>}
+                        <Pagination productsPerPage={productsPerPage} totalProducts={products.length} paginate={number => setCurrentPage(number)}/>
                     </div>
                 </div>
 
