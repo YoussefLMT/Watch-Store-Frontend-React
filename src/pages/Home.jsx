@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
-import './home.css'
+import './styles/home.css'
 import image from '../assets/watches_PNG101453.png'
 import Feature from '../components/Feature'
 import img1 from '../assets/watch_p.png'

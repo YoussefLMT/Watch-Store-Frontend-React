@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 import ProductsTable from '../components/ProductsTable';
 import Sidebar from '../components/Sidebar'
-import './products.css'
+import './styles/products.css'
 import { getProducts } from '../features/productsSlice';
 import { useEffect } from 'react';
 import { store } from '../app/store';

@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import './dashboard.css'
+import './styles/dashboard.css'
 
 function Dashboard() {
     return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import './login.css'
+import './styles/login.css'
 import { login } from '../features/authSlice'
 
 function Login() {

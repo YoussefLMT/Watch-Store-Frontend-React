@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import './register.css'
+import './styles/register.css'
 import axiosInstance from '../axios'
 import Swal from 'sweetalert2'
 
