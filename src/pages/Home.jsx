@@ -10,7 +10,7 @@ import Category from '../components/Category'
 import img4 from '../assets/f_watch.png'
 import img5 from '../assets/smart.png'
 import img6 from '../assets/classic.png'
-import { getLatestProducts } from '../features/latestProductsSlice'
+import { getLatestProducts } from '../features/specificProductsSlice'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 

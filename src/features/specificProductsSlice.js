@@ -17,8 +17,8 @@ const initialState = {
     error: false,
 }
 
-const latestProductsSlice = createSlice({
-    name: "latestProducts",
+const specificProductsSlice = createSlice({
+    name: "specificProducts",
     initialState,
     extraReducers: (builder) => {
         builder.addCase(getLatestProducts.pending, (state) => {
@@ -36,4 +36,4 @@ const latestProductsSlice = createSlice({
     }
 })
 
-export default latestProductsSlice.reducer
+export default specificProductsSlice.reducer
