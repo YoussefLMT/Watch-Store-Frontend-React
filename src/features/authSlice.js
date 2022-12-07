@@ -55,7 +55,7 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
 
 export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-        const responce = await axios.post('/logout')
+        const responce = await axiosInstance.post('/logout')
 
         localStorage.removeItem('token')
         localStorage.removeItem('role')
@@ -103,22 +103,22 @@ const authSlice = createSlice({
         })
 
 
-        builder.addCase(getUserData.fulfilled, (state, action) => {
-            state.completed = true
-            state.loading = false
-            state.error = false
-            state.user = action.payload.userData
-        })
-        builder.addCase(getUserData.pending, (state) => {
-            state.loading = true
-        })
-        builder.addCase(getUserData.rejected, (state) => {
-            state.error = true
-            state.completed = false
-            state.loading = false
-            state.user = null
-            state.token = null
-        })
+        // builder.addCase(getUserData.fulfilled, (state, action) => {
+        //     state.completed = true
+        //     state.loading = false
+        //     state.error = false
+        //     state.user = action.payload.userData
+        // })
+        // builder.addCase(getUserData.pending, (state) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getUserData.rejected, (state) => {
+        //     state.error = true
+        //     state.completed = false
+        //     state.loading = false
+        //     state.user = null
+        //     state.token = null
+        // })
 
 
         builder.addCase(logout.fulfilled, (state) => {

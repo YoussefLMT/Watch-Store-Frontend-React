@@ -1,10 +1,22 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import './styles/navbar.css'
+import { logout, logut } from '../features/authSlice'
 
 function Navbar() {
 
   const [clicked, setCicked] = useState(false)
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const logOut = (e) => {
+    e.preventDefault()
+
+    dispatch(logout())
+    navigate("/login")
+  }
 
   return (
     <>
@@ -29,7 +41,7 @@ function Navbar() {
             }
             {localStorage.getItem('token') &&
               <>
-                <li><button className="btn btn-danger">Log out</button></li>
+                <li><button onClick={logOut} className="btn btn-danger">Log out</button></li>
               </>
             }
           </ul>
