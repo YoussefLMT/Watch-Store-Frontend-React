@@ -4,16 +4,16 @@ import './styles/product.css'
 
 function Product(props) {
     return (
-        <div class="box">
-            <div class="imgbox">
+        <div class="product-box">
+            <div class="product-imgbox">
                 <img src={props.image} />
             </div>
-            <div class="text">
+            <div class="product-text">
                 <h3>{props.name}</h3>
                 <p>{props.price} DH</p>
                 <p>Quantity: {props.quantity}</p>
             </div>
-            <Link to="shop/:id" class="btn-show">Show</Link>
+            <Link to="shop/:id" class="product-btn-show">Show</Link>
         </div >
     )
 }

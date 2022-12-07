@@ -1,26 +1,26 @@
-.box {
+.category-box {
     width: 220px;
     margin: 15px;
     border: 15px solid #fff;
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
 }
 
-.box:hover {
+.category-box:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.box .imgbox {
+.category-box .category-imgbox {
     position: relative;
     width: 100%;
     height: 170px;
 }
 
-.box .imgbox img {
+.category-box .category-imgbox img {
     width: 100%;
     height: 100%;
 }
 
-.box .text {
+.category-box .category-text {
     padding: 15px 0 0;
     text-align: center;
 }

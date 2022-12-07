@@ -1,13 +1,13 @@
 import React from 'react'
-import './feature.css'
+import './styles/feature.css'
 
 function Feature(props) {
     return (
-        <div class="box">
-            <div class="imgbox">
+        <div class="feature-box">
+            <div class="feature-imgbox">
                 <img src={props.image} />
             </div>
-            <div class="text">
+            <div class="feature-text">
                 <h4>{ props.name }</h4>
                 <p>{ props.description }</p>
             </div>
