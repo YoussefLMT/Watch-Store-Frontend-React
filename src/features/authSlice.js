@@ -102,6 +102,7 @@ const authSlice = createSlice({
             state.loading = false
         })
 
+
         builder.addCase(getUserData.fulfilled, (state, action) => {
             state.completed = true
             state.loading = false
@@ -117,6 +118,23 @@ const authSlice = createSlice({
             state.loading = false
             state.user = null
             state.token = null
+        })
+
+
+        builder.addCase(logout.fulfilled, (state) => {
+            state.completed = true
+            state.loading = false
+            state.error = false
+            // state.user = null
+            // state.token = null
+        })
+        builder.addCase(logout.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(logout.rejected, (state) => {
+            state.error = true
+            state.completed = false
+            state.loading = false
         })
     }
 })
