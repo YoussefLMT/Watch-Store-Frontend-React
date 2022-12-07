@@ -27,6 +27,11 @@ function Navbar() {
                 <li><Link to="/dashboard">Dashboard</Link></li>
               </>
             }
+            {localStorage.getItem('token') &&
+              <>
+                <li><button className="btn btn-danger">Log out</button></li>
+              </>
+            }
           </ul>
         </div>
         <div className='mobile' onClick={() => setCicked(clicked => !clicked)}>
