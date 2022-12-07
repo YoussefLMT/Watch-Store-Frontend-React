@@ -13,7 +13,7 @@ function Product(props) {
                 <p>{props.price} DH</p>
                 <p>Quantity: {props.quantity}</p>
             </div>
-            <Link to="shop/:id" class="product-btn-show">Show</Link>
+            <Link to={`shop/${props.id}`} class="product-btn-show">Show</Link>
         </div >
     )
 }

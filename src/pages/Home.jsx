@@ -88,7 +88,7 @@ function Home() {
                     {
                         loading ? <ClipLoader /> :
                             latest_products.map((latest_product) => {
-                                return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} quantity={latest_product.quantity} />
+                                return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} quantity={latest_product.quantity} id={latest_product.id}/>
                             })
                     }
                 </div>
@@ -103,7 +103,7 @@ function Home() {
                     {
                         loading ? <ClipLoader /> :
                             home_products.map((home_product) => {
-                                return <Product image={`http://127.0.0.1:8000/${home_product.image}`} name={home_product.name} price={home_product.price} quantity={home_product.quantity} />
+                                return <Product image={`http://127.0.0.1:8000/${home_product.image}`} name={home_product.name} price={home_product.price} quantity={home_product.quantity} id={home_product.id}/>
                             })
                     }
                 </div>
