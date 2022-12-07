@@ -22,6 +22,11 @@ function Navbar() {
                 <li><Link to="/register">Register</Link></li>
               </>
             }
+            {localStorage.getItem('role') === 'admin' &&
+              <>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+              </>
+            }
           </ul>
         </div>
         <div className='mobile' onClick={() => setCicked(clicked => !clicked)}>
