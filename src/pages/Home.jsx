@@ -14,6 +14,7 @@ import { getLatestProducts } from '../features/specificProductsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import Product from '../components/Product'
+import { Link } from 'react-router-dom'
 
 function Home() {
 
@@ -88,6 +89,18 @@ function Home() {
                             return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} description={latest_product.description} />
                         })
                     }
+                </div>
+            </section>
+
+            <section class="home-products">
+                <div class="title">
+                    <h2 class="title-txt">Our <span>Products</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+                <div>
+                </div>
+                <div class="title">
+                    <Link to="/shop" class="see-all-btn">See All</Link>
                 </div>
             </section>
         </>
