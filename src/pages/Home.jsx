@@ -62,6 +62,15 @@ function Home() {
 
                 </div>
             </section>
+
+            <section class="latest-products">
+                <div class="title">
+                    <h2 class="title-txt">Latest <span>Products</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+                <div class="content">
+                </div>
+            </section>
         </>
     )
 }
