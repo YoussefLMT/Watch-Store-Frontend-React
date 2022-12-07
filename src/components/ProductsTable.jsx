@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
 import { getProducts } from '../features/productsSlice';
+import { store } from '../app/store';
 
 function ProductsTable(props) {
 
@@ -56,7 +57,7 @@ function ProductsTable(props) {
                 icon: 'success',
                 title: response.data.message
             })
-            
+            store.dispatch(getProducts())
         } else if (response.data.status === 422) {
             setErrors(response.data.validation_err)
         }
