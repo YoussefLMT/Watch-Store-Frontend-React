@@ -32,6 +32,21 @@ function ProductsTable(props) {
         }
     }
 
+    
+    const updateProduct = async (e) => {
+        e.preventDefault();
+        const response = await axiosInstance.put(`update-product/${id}`, product)
+        if (response.data.status === 200) {
+            Toast.fire({
+                icon: 'success',
+                title: response.data.message
+            })
+            
+        } else if (response.data.status === 422) {
+            setErrors(response.data.validation_err)
+        }
+    }
+
     useEffect(() => {
         getProduct()
     }, [])
@@ -83,7 +98,7 @@ function ProductsTable(props) {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form>
+                            <form onSubmit={updateProduct}>
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
                                     <input type="text" name='name' value={product?.name || 'Loading...'} onChange={handleChange} className="form-control" id="name" />
