@@ -35,7 +35,7 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
             localStorage.setItem('role', response.data.role)
         }
 
-        thunkAPI.dispatch(setUser(response.data.role))
+        // thunkAPI.dispatch(setUser(response.data.role))
 
         return response.data
     } catch (error) {
@@ -43,12 +43,24 @@ export const login = createAsyncThunk('auth/login', async (data, thunkAPI) => {
     }
 })
 
+// export const getUserData = createAsyncThunk('auth/getUserData', async (_, thunkAPI) => {
+//     try {
+//         const response = await axiosInstance.get('/get-user')
 
-export const getUserData = createAsyncThunk('auth/getUserData', async (_, thunkAPI) => {
+//         return response.data
+//     } catch (error) {
+//         return thunkAPI.rejectWithValue(error.message)
+//     }
+// })
+
+export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-        const response = await axiosInstance.get('/get-user')
+        const responce = await axios.post('/logout')
 
-        return response.data
+        localStorage.removeItem('token')
+        localStorage.removeItem('role')
+
+        return responce.data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
     }
@@ -69,11 +81,11 @@ const initialState = {
 const authSlice = createSlice({
     name: "auth",
     initialState,
-    reducers: {
-        setUser: (state, action) => {
-            state.user = action.payload
-        },
-    },   
+    // reducers: {
+    //     setUser: (state, action) => {
+    //         state.user = action.payload
+    //     },
+    // },   
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action) => {
             state.completed = true
