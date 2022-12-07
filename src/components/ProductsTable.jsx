@@ -2,11 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import axiosInstance from '../axios';
+import { getProducts } from '../features/productsSlice';
 
 function ProductsTable(props) {
 
     const [product, setProduct] = useState({})
     const [id, setId] = useState(0)
+    const [errors, setErrors] = useState([]);
 
     const Toast = Swal.mixin({
         toast: true,
