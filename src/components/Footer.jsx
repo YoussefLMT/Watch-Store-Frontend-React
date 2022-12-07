@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles/footer.css'
 
 function Footer() {
     return (
@@ -8,7 +9,7 @@ function Footer() {
                     <div class="row">
                         <div class="col-md-3">
                             <div class="d-flex flex-column">
-                                <h5 class="navbar-brand fw-bold fs-2"><span class="text-fo">H</span>S</h5>
+                                <h5 class="navbar-brand fw-bold fs-2"><span class="text-fo">W</span>S</h5>
                                 <p class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
                                     veniam excepturi. Laboriosam doloremque cupiditate animi eius est possimus
                                     saepe quo, deleniti aperiam ad ex enim assumenda rem temporibus error modi?

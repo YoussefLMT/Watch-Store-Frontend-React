@@ -16,6 +16,7 @@ import { useEffect } from 'react'
 import Product from '../components/Product'
 import { Link } from 'react-router-dom'
 import ClipLoader from "react-spinners/ClipLoader";
+import Footer from '../components/Footer'
 
 function Home() {
 
@@ -111,6 +112,8 @@ function Home() {
                     <Link to="/shop" class="see-all-btn">See All</Link>
                 </div>
             </section>
+
+            <Footer />
         </>
     )
 }

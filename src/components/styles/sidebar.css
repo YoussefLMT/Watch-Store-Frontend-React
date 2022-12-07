@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.link {
+.sidebar-link {
     display: flex;
     color: #fff;
     gap: 15px;
@@ -33,19 +33,19 @@
     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.link:hover {
+.sidebar-link:hover {
     border-right: 4px solid white;
     background: #0D3D8F;
     color: white;
     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.link .icon {
+.sidebar-link .icon {
     margin-left: 10px;
     font-size: 25px;
 }
 
-.link .text {
+.sidebar-link .text {
     margin-top: 6px;
 }
 

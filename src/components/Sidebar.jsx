@@ -27,7 +27,7 @@ function Sidebar() {
         <div className="sidebar" style={{ width: clicked ? '5%' : '18%' }}>
             <section className="routes">
                 {sidebarData.map((data) => (
-                    <NavLink to={data.path} key={data.name} className="link">
+                    <NavLink to={data.path} key={data.name} className="sidebar-link">
                         <div className="icon">
                             {data.icon}
                         </div>
