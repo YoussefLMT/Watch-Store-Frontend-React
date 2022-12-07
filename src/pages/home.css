@@ -112,7 +112,6 @@
         display: none;
     }
 
-
     .features {
         padding: 100px 0px;
     }
@@ -124,6 +123,10 @@
     .title p {
         text-align: center;
         padding: 0 20px;
+    }
+
+    .latest-products {
+        padding: 100px 20px;
     }
 }
 
