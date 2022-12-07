@@ -86,6 +86,37 @@
     margin-top: 40px;
 }
 
+.home-products {
+    padding: 0px 100px 0px 100px;
+}
+
+.home-products .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.see-all-btn {
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 7px;
+    color: #fff;
+    background: #EAB800;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.see-all-btn:hover {
+    background: #C19800;
+    border: none;
+}
+
 @media only screen and (max-width: 768px) {
     .content {
         margin: 50px 0;
