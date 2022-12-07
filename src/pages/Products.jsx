@@ -91,7 +91,7 @@ function Products() {
                         </button>
                     </div>
                     <div className="card-body">
-                        <ProductsTable products={products}/>
+                        <ProductsTable products={products} />
                         {loading && <h4 className='text-center'>Loading...</h4>}
                     </div>
                 </div>
@@ -122,11 +122,14 @@ function Products() {
                                         <input type="text" name='quantity' value={form.quantity} onChange={handleChange} className="form-control" id="quantity" />
                                         <span className='text-danger'>{form.errors.quantity}</span>
                                     </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="category" className="form-label">Category</label>
-                                        <input type="text" name='category' value={form.category} onChange={handleChange} className="form-control" id="category" />
-                                        <span className='text-danger'>{form.errors.category}</span>
-                                    </div>
+                                    <select class="form-select" aria-label="Default select example" name='category' value={form.category} onChange={handleChange}>
+                                        <option selected>Category</option>
+                                        <option value="men">Men</option>
+                                        <option value="women">Women</option>
+                                        <option value="sport">Sport</option>
+                                        <option value="classic">Classic</option>
+                                    </select>
+                                    <span className='text-danger'>{form.errors.category}</span>
                                     <div className="mb-3">
                                         <label htmlFor="description" className="form-label">Description</label>
                                         <input type="text" name='description' value={form.description} onChange={handleChange} className="form-control" id="description" />
