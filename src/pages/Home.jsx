@@ -43,7 +43,7 @@ function Home() {
                                 nulla quos magnam veniam reprehenderit enim, perferendis doloremque,
                                 maiores ipsa laudantium iure
                             </p>
-                            <button className="shop-btn">SHOP NOW</button>
+                            <Link to="/shop" className="shop-btn">SHOP NOW</Link>
                         </div>
                         <div className="col-md-4">
                             <div className="image">
