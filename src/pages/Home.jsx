@@ -85,7 +85,7 @@ function Home() {
                 <div class="content">
                     {
                         latest_products.map((latest_product) => {
-                            return <Product image="http://127.0.0.1:8000/' + product.image" name={latest_product.name} price={latest_product.price} description={latest_product.description} />
+                            return <Product image={`http://127.0.0.1:8000/${latest_product.image}`} name={latest_product.name} price={latest_product.price} description={latest_product.description} />
                         })
                     }
                 </div>
