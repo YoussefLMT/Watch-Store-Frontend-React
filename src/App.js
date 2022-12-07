@@ -8,6 +8,7 @@ import PrivateRoutes from "./utils/PrivateRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from './features/authSlice';
 import Products from './pages/Products';
+import Shop from './pages/Shop';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={localStorage.getItem('token') ? <Navigate to='/' /> : <Login />} />
         <Route path='/register' element={localStorage.getItem('token') ? <Navigate to='/' /> : <Register />} />
+        <Route path='/shop' element={<Shop />} />
 
         <Route element={<PrivateRoutes />}>
           <Route path='/dashboard' element={<Dashboard />} />
