@@ -20,7 +20,20 @@ const initialState = {
 const latestProductsSlice = createSlice({
     name: "latestProducts",
     initialState,
-    
+    extraReducers: (builder) => {
+        builder.addCase(getLatestProducts.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getLatestProducts.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = false
+            state.latest_products = action.payload
+        })
+        builder.addCase(getLatestProducts.rejected, (state) => {
+            state.error = true
+            state.loading = false
+        })
+    }
 })
 
 export default latestProductsSlice.reducer
