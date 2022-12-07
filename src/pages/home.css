@@ -103,18 +103,13 @@
     font-weight: 600;
     border-radius: 7px;
     color: #fff;
-    background: #EAB800;
+    background: black;
     display: inline-block;
     padding: 10px 30px;
     margin-top: 30px;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-}
-
-.see-all-btn:hover {
-    background: #C19800;
-    border: none;
 }
 
 @media only screen and (max-width: 768px) {

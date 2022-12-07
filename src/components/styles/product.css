@@ -30,7 +30,7 @@
 }
 
 .box .text p {
-    color: #EAB800;
+    color: black;
     font-weight: 500;
 }
 
@@ -39,15 +39,11 @@
     font-weight: 600;
     border-radius: 7px;
     color: #fff;
-    background: #EAB800;
-    display: inline-block;
+    background: black;
+    display: flex;
+    justify-content: center;
     padding: 10px 30px;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-}
-
-.btn-show:hover {
-    background: #C19800;
-    border: none;
 }
