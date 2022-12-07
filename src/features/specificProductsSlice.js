@@ -3,8 +3,8 @@ import axiosInstance from '../axios'
 
 export const getLatestProducts = createAsyncThunk('products/getLatestProducts', async () => {
     try {
-        const response = await axiosInstance.get('/latest-products')
-        return response.data.products
+        const response = await axiosInstance.get('/specific-products')
+        return response.data
     } catch (error) {
         console.log(error)
     }
@@ -12,6 +12,7 @@ export const getLatestProducts = createAsyncThunk('products/getLatestProducts', 
 
 const initialState = {
     latest_products: [],
+    home_products: [],
     completed: false,
     loading: false,
     error: false,
@@ -27,7 +28,8 @@ const specificProductsSlice = createSlice({
         builder.addCase(getLatestProducts.fulfilled, (state, action) => {
             state.loading = false
             state.error = false
-            state.latest_products = action.payload
+            state.latest_products = action.payload.latest_products
+            state.home_products = action.payload.home_products
         })
         builder.addCase(getLatestProducts.rejected, (state) => {
             state.error = true
