@@ -47,7 +47,7 @@ function ProductDetails() {
                                 <div class="col-md-4">
                                     <img class="details-img" src={'http://127.0.0.1:8000/' + product.image} />
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 tt">
                                     <Link to="/">Go Back</Link><br /><br />
                                     <h5>{product.name}</h5>
                                     <p><span class="product-details-title">Price:</span> {product.price}DH</p>
