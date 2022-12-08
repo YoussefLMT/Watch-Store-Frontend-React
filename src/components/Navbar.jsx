@@ -23,7 +23,7 @@ function Navbar() {
         <div>
           <ul className={clicked ? 'navbar active-navbar' : 'navbar'}>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/#">Shop</Link></li>
+            <li><Link to="/shop">Shop</Link></li>
             <li><Link to="/#">About</Link></li>
             <li><Link to="/#">Contact</Link></li>
             {!localStorage.getItem('token') &&

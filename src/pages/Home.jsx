@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import Product from '../components/Product'
 import { Link } from 'react-router-dom'
-import ClipLoader from "react-spinners/ClipLoader";
+import ClipLoader from "react-spinners/ClipLoader"
 import Footer from '../components/Footer'
 
 function Home() {
