@@ -10,8 +10,18 @@ export const getProducts = createAsyncThunk('products/getProducts', async () => 
     }
 })
 
+export const getProduct = createAsyncThunk('products/getProduct', async (id) => {
+    try {
+        const response = await axiosInstance.get(`/get-product/${id}`)
+        return response.data.product
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 const initialState = {
     products: [],
+    product: [],
     completed: false,
     loading: false,
     error: false,
