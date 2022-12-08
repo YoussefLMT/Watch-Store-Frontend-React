@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from './features/authSlice';
 import Products from './pages/Products';
 import Shop from './pages/Shop';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/login' element={localStorage.getItem('token') ? <Navigate to='/' /> : <Login />} />
         <Route path='/register' element={localStorage.getItem('token') ? <Navigate to='/' /> : <Register />} />
         <Route path='/shop' element={<Shop />} />
+        <Route path='/shop/:id' element={<ProductDetails />} />
 
         <Route element={<PrivateRoutes />}>
           <Route path='/dashboard' element={<Dashboard />} />
