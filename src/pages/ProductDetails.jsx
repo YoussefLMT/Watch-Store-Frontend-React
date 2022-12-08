@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -13,6 +14,20 @@ function ProductDetails() {
     const params = useParams()
 
     const { product } = useSelector((state) => state.products)
+
+    const [quantity, setQuantity] = useState(1)
+
+    const increment = () => {
+        setQuantity(quantity => quantity + 1)
+    }
+
+    const decrement = () => {
+        if (quantity === 1) {
+            setQuantity(1);
+        } else {
+            setQuantity(quantity => quantity - 1)
+        }
+    }
 
     useEffect(() => {
         dispatch(getProduct(params.id))
@@ -30,7 +45,11 @@ function ProductDetails() {
                     <p><span class="title">Price:</span> {product.price}DH</p>
                     <p><span class="title">Description:</span> {product.description}</p>
                     <p><span class="title">Quantity:</span> {product.quantity}</p>
-
+                    <div class="quantity-toggle">
+                        <button onClick={decrement()}>&mdash;</button>
+                        <input type="text" readonly />
+                        <button onClick={increment()}>&#xff0b;</button>
+                    </div>
                     <br />
                     <button class="btn">Add Product To Cart</button>
                 </div >
