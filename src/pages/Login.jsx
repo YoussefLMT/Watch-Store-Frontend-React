@@ -1,35 +1,38 @@
-import React, { useState, useEffect  } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './styles/login.css'
-import { login } from '../features/authSlice'
+// import { login } from '../features/authSlice'
+import axiosInstance from '../axios'
 
 function Login() {
 
-    const dispatch = useDispatch()
+    const [message, setMessage] = useState('');
+
+    // const dispatch = useDispatch()
 
     // const { user } = useSelector((state) => state.auth)
 
     const navigate = useNavigate()
 
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
+    // useEffect(() => {
+    //     if (localStorage.getItem('token')) {
 
-            if (localStorage.getItem('role') === "user") {
-                navigate('/')
-            } else if (localStorage.getItem('role') === "admin") {
-                navigate('/dashboard')
-            }
+    //         if (localStorage.getItem('role') === "user") {
+    //             navigate('/')
+    //         } else if (localStorage.getItem('role') === "admin") {
+    //             navigate('/dashboard')
+    //         }
 
-        }
+    //     }
 
-    }, [navigate, dispatch])
+    // }, [navigate, dispatch])
 
     const [form, setForm] = useState({
         email: '',
         password: '',
-        error_list: [],
+        errors_list: [],
     });
 
     const handleChange = (e) => {
@@ -37,7 +40,7 @@ function Login() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    const loginFunc = (e) => {
+    const loginFunc = async (e) => {
         e.preventDefault()
 
         const data = {
@@ -45,11 +48,24 @@ function Login() {
             password: form.password
         }
 
-        if (!data.email || !data.password) {
-            return
+        const response = await axiosInstance.post('/login', data)
+
+        if (response.data.status === 401) {
+            setMessage(response.data.message)
+        } else if (response.data.role === 'user') {
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('role', response.data.role)
+            navigate('/dashboard')
+        } else if (response.data.role === 'admin') {
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('role', response.data.role)
+            navigate('/')
+        }
+        else {
+            setForm({ ...form, errors_list: response.data.validation_err });
         }
 
-        dispatch(login(data))
+        // dispatch(login(data))
     }
 
 
