@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { getProduct } from '../features/productsSlice'
+import './styles/productDetails.css'
 
 function ProductDetails() {
 
@@ -32,6 +33,7 @@ function ProductDetails() {
     useEffect(() => {
         dispatch(getProduct(params.id))
     }, [dispatch])
+
     return (
         <>
             <Navbar />
@@ -40,15 +42,15 @@ function ProductDetails() {
                     <img class="details-img" src={'http://127.0.0.1:8000/' + product.image} />
                 </div>
                 <div class="col-md-4">
-                    <router-link to="/">Go Back</router-link><br /><br />
+                    <Link to="/">Go Back</Link><br /><br />
                     <h5>{product.name}</h5>
-                    <p><span class="title">Price:</span> {product.price}DH</p>
-                    <p><span class="title">Description:</span> {product.description}</p>
-                    <p><span class="title">Quantity:</span> {product.quantity}</p>
+                    <p><span class="product-details-title">Price:</span> {product.price}DH</p>
+                    <p><span class="product-details-title">Description:</span> {product.description}</p>
+                    <p><span class="product-details-title">Quantity:</span> {product.quantity}</p>
                     <div class="quantity-toggle">
-                        <button onClick={decrement()}>&mdash;</button>
-                        <input type="text" readonly />
-                        <button onClick={increment()}>&#xff0b;</button>
+                        <button onClick={decrement}>&mdash;</button>
+                        <input type="text" value={quantity} readonly />
+                        <button onClick={increment}>&#xff0b;</button>
                     </div>
                     <br />
                     <button class="btn">Add Product To Cart</button>
