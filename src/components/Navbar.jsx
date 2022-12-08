@@ -21,7 +21,7 @@ function Navbar() {
       <nav>
         <Link to="/"><h2><span class="txt">W</span>S</h2></Link>
         <div>
-          <ul className={clicked ? 'navbar active' : 'navbar'}>
+          <ul className={clicked ? 'navbar active-navbar' : 'navbar'}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/#">Shop</Link></li>
             <li><Link to="/#">About</Link></li>

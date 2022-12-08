@@ -80,7 +80,7 @@ nav .txt {
         transition: .5s ease-in-out;
     }
 
-    .navbar.active {
+    .navbar.active-navbar {
         left: 0;
     }
 

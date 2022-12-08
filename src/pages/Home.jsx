@@ -24,8 +24,6 @@ function Home() {
 
     const { latest_products, home_products, loading } = useSelector((state) => state.specificProducts)
 
-    console.log(latest_products)
-
     useEffect(() => {
         dispatch(getLatestProducts())
     }, [dispatch])
