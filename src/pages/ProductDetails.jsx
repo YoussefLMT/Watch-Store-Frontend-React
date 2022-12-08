@@ -59,7 +59,7 @@ function ProductDetails() {
                                         <button onClick={increment}>&#xff0b;</button>
                                     </div>
                                     <br />
-                                    <button class="btn">Add Product To Cart</button>
+                                    <button class="add-to-cart-btn">Add Product To Cart</button>
                                 </div>
                             </>
                     }
