@@ -2,12 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { getProduct } from '../features/productsSlice'
 import './styles/productDetails.css'
 import ClipLoader from "react-spinners/ClipLoader"
+import Swal from 'sweetalert2'
+import axiosInstance from '../axios'
 
 function ProductDetails() {
 
@@ -19,6 +21,20 @@ function ProductDetails() {
 
     const [quantity, setQuantity] = useState(1)
 
+    const navigate = useNavigate()
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    })
+
     const increment = () => {
         setQuantity(quantity => quantity + 1)
     }
@@ -28,6 +44,35 @@ function ProductDetails() {
             setQuantity(1);
         } else {
             setQuantity(quantity => quantity - 1)
+        }
+    }
+
+    const addToCart = async () => {
+        if (!localStorage.getItem("token")) {
+            Toast.fire({
+                icon: "error",
+                title: "Please login first",
+            });
+        } else {
+            if (quantity > product.quantity) {
+                Toast.fire({
+                    icon: "error",
+                    title: "Quantity you choose is more what we have!",
+                });
+            } else {
+                const response = await axiosInstance.post(`add-to-cart/${params.id}`, { quantity: quantity });
+                if (response.data.status === 406) {
+                    Toast.fire({
+                        icon: "error",
+                        title: response.data.message,
+                    });
+                } else if (response.data.status === 200) {
+                    Toast.fire({
+                        icon: "success",
+                        title: response.data.message,
+                    });
+                }
+            }
         }
     }
 
@@ -59,7 +104,7 @@ function ProductDetails() {
                                         <button onClick={increment}>&#xff0b;</button>
                                     </div>
                                     <br />
-                                    <button class="add-to-cart-btn">Add Product To Cart</button>
+                                    <button onClick={addToCart} class="add-to-cart-btn">Add Product To Cart</button>
                                 </div>
                             </>
                     }
