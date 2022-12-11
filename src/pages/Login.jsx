@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './styles/login.css'
-// import { login } from '../features/authSlice'
+import { login } from '../features/authSlice'
 import axiosInstance from '../axios'
 
 function Login() {
 
     const [message, setMessage] = useState('');
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     // const { user } = useSelector((state) => state.auth)
 
@@ -48,24 +48,24 @@ function Login() {
             password: form.password
         }
 
-        const response = await axiosInstance.post('/login', data)
+        // const response = await axiosInstance.post('/login', data)
 
-        if (response.data.status === 401) {
-            setMessage(response.data.message)
-        } else if (response.data.role === 'user') {
-            localStorage.setItem('token', response.data.token)
-            localStorage.setItem('role', response.data.role)
-            navigate('/dashboard')
-        } else if (response.data.role === 'admin') {
-            localStorage.setItem('token', response.data.token)
-            localStorage.setItem('role', response.data.role)
-            navigate('/')
-        }
-        else {
-            setForm({ ...form, errors_list: response.data.validation_err });
-        }
+        // if (response.data.status === 401) {
+        //     setMessage(response.data.message)
+        // } else if (response.data.role === 'user') {
+        //     localStorage.setItem('token', response.data.token)
+        //     localStorage.setItem('role', response.data.role)
+        //     navigate('/dashboard')
+        // } else if (response.data.role === 'admin') {
+        //     localStorage.setItem('token', response.data.token)
+        //     localStorage.setItem('role', response.data.role)
+        //     navigate('/')
+        // }
+        // else {
+        //     setForm({ ...form, errors_list: response.data.validation_err });
+        // }
 
-        // dispatch(login(data))
+        dispatch(login(data))
     }
 
 

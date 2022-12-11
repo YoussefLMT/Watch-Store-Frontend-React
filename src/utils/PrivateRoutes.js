@@ -4,11 +4,18 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 function PrivateRoutes() {
     const token = localStorage.getItem('token')
-    const role = localStorage.getItem('role')
-    // const { user } = useSelector((state) => state.auth)
-    return (
-        token && role === 'admin' ? <Outlet /> : <Navigate to="/" />
-    )
+    // const role = localStorage.getItem('role')
+    const { user } = useSelector((state) => state.auth)
+    
+    if(user && user.role === 'admin'){
+        return (
+            <Outlet /> 
+        )
+    }else {
+        return (
+             <Navigate to="/" />
+        )
+    }
 }
 
 export default PrivateRoutes

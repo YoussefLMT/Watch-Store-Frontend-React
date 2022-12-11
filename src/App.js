@@ -13,15 +13,15 @@ import ProductDetails from './pages/ProductDetails';
 
 function App() {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  // const { token } = useSelector((state) => state.auth)
+  const { token } = useSelector((state) => state.auth)
 
-  // useEffect(() => {
-  //   if(token) {
-  //     dispatch(getUserData())
-  //   }
-  // }, [dispatch])
+  useEffect(() => {
+    if(token) {
+      dispatch(getUserData())
+    }
+  }, [dispatch])
 
   return (
     <BrowserRouter>
