@@ -11,13 +11,19 @@ function PrivateRoutes() {
     if (loading) {
         return <ClipLoader />
     } else {
-        if (user && user.role !== 'admin') {
-            return (
-                <Navigate to="/" />
-            )
+        if (user) {
+            if (user.role !== 'admin') {
+                return (
+                    <Navigate to="/" />
+                )
+            } else {
+                return (
+                    <Outlet />
+                )
+            }
         } else {
             return (
-                <Outlet />
+                <Navigate to="/" />
             )
         }
     }

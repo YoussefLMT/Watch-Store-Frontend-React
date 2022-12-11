@@ -8,13 +8,13 @@ import axiosInstance from '../axios'
 
 function Login() {
 
-    const [message, setMessage] = useState('');
+    // const [message, setMessage] = useState('');
 
     const dispatch = useDispatch()
 
     // const { user } = useSelector((state) => state.auth)
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     // useEffect(() => {
     //     if (localStorage.getItem('token')) {
