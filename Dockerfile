@@ -6,7 +6,7 @@ COPY package.json .
 
 RUN npm install
 
-COPY . /watch_store_frontend
+COPY . .
 
 EXPOSE 3000
 
